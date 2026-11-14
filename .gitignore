@@ -1,0 +1,23 @@
+# Python Cache Files
+__pycache__/
+*.py[cod]
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Environment Variables and Secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Juptyer Notebook Checkpoints
+.ipynb_ccheckpoints/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# VS Code Local Settings
+.vscode/
