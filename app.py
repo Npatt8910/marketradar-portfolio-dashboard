@@ -93,7 +93,8 @@ with st.form('holdings_form'):
     holdings=st.data_editor(st.session_state.holdings,num_rows='dynamic',hide_index=True,use_container_width=True,
         column_config={'Ticker':st.column_config.TextColumn('Ticker (e.g. AAPL)',required=True,max_chars=15),
                        'Shares':st.column_config.NumberColumn('Shares',min_value=0.000001,format='%.4f',required=True),
-                       'Average cost per share':st.column_config.NumberColumn('Average cost per share ($)',min_value=0.,format='$%.2f',required=True)},key='holdings_editor')
+                       'Average cost per share':st.column_config.NumberColumn('Average Purchase Price ($/Share)', min_value=0.,format='$%.2f', required=True, help="Enter your average purchase price per share."
+)},key='holdings_editor')
     run=st.form_submit_button('Analyze Portfolio',type='primary',use_container_width=True)
 if run:
     clean=holdings.copy();clean['Ticker']=clean['Ticker'].fillna('').astype(str).str.strip().str.upper()
